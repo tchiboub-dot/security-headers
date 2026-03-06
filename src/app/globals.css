@@ -962,6 +962,52 @@ html[data-theme="light"] ::selection {
 }
 
 /* ============================================
+   HERO VISUAL ACCENT
+   ============================================ */
+
+.hero-accent {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  max-width: 400px;
+  height: 400px;
+  pointer-events: none;
+}
+
+.shield-glow {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 280px;
+  height: 280px;
+  opacity: 0.03;
+  filter: blur(40px);
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.8) 0%, transparent 70%);
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(-50%);
+  }
+  50% {
+    transform: translateY(-58%);
+  }
+}
+
+/* Empty state helper text */
+.stats-helper {
+  text-align: center;
+  padding: 1rem 0;
+  color: var(--text-tertiary);
+  font-size: 0.875rem;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+}
+
+/* ============================================
    PREMIUM FOOTER STYLING
    ============================================ */
 
@@ -970,11 +1016,11 @@ html[data-theme="light"] ::selection {
   border-top: 1px solid var(--border-light);
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.02) 0%,
-    rgba(59, 130, 246, 0.03) 100%
+    rgba(255, 255, 255, 0.01) 0%,
+    rgba(59, 130, 246, 0.02) 100%
   );
-  padding: 3rem 0;
-  margin-top: 4rem;
+  padding: 1.5rem 0;
+  margin-top: 3rem;
   position: relative;
   overflow: hidden;
 }
@@ -1004,16 +1050,16 @@ html[data-theme="light"] ::selection {
 }
 
 .footer-text {
-  font-size: 0.875rem;
-  line-height: 1.6;
+  font-size: 0.8125rem;
+  line-height: 1.5;
   color: var(--text-tertiary);
-  letter-spacing: 0.3px;
+  letter-spacing: 0.2px;
   font-weight: 400;
 }
 
 .footer-text a {
-  color: var(--accent-primary);
-  font-weight: 600;
+  color: rgba(59, 130, 246, 0.75);
+  font-weight: 500;
   text-decoration: none;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -1059,11 +1105,11 @@ html[data-theme="light"] .footer-text a:hover {
 /* Responsive footer */
 @media (max-width: 640px) {
   .footer-container {
-    padding: 2rem 0;
-    margin-top: 2.5rem;
+    padding: 1.25rem 0;
+    margin-top: 2rem;
   }
 
   .footer-text {
-    font-size: 0.8125rem;
+    font-size: 0.75rem;
   }
 }

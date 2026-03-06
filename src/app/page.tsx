@@ -116,7 +116,7 @@ export default function Home() {
     <main className="min-h-screen pt-24 pb-16 px-4 sm:px-6 lg:px-8 relative">
       <div className="max-w-7xl mx-auto">
         {/* Hero Section */}
-        <div className="mb-16 fade-in">
+        <div className="mb-16 fade-in relative">
           <div className="max-w-3xl">
             <h1 className="text-5xl sm:text-6xl font-bold text-white mb-4 leading-tight">
               Your Cybersecurity Guardian
@@ -129,11 +129,16 @@ export default function Home() {
             </p>
           </div>
 
+          {/* Subtle Hero Visual Accent */}
+          <div className="hero-accent hidden lg:block">
+            <div className="shield-glow" />
+          </div>
+
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mb-8">
             <Link
               href="/password-analyzer"
-              className="px-7 py-3 rounded-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 shadow-lg shadow-blue-500/25 transition-all duration-300 hover:shadow-blue-500/40 hover:shadow-lg flex items-center justify-center gap-2"
+              className="px-7 py-3 rounded-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 shadow-lg shadow-blue-500/30 transition-all duration-300 hover:shadow-blue-500/50 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 active:shadow-blue-500/20 flex items-center justify-center gap-2 border border-blue-500/30"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" />
@@ -142,7 +147,7 @@ export default function Home() {
             </Link>
             <Link
               href="/phishing-detector"
-              className="px-7 py-3 rounded-lg font-semibold text-slate-200 border border-slate-600 hover:border-blue-500 hover:bg-blue-500/10 transition-all duration-300 flex items-center justify-center gap-2"
+              className="px-7 py-3 rounded-lg font-semibold text-slate-200 border border-slate-600 hover:border-blue-500/60 hover:bg-blue-500/8 transition-all duration-300 flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-blue-500/10"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M13.477 14.89A6 6 0 15.572 5.013a3 3 0 11-4.95 3.944L5.007 9A4 4 0 1016 4l-1.307 1.547a3 3 0 01-2.216 1.343H6.05a3 3 0 000 6h.05a3 3 0 00.217-5.9" clipRule="evenodd" />
@@ -195,6 +200,11 @@ export default function Home() {
           ))}
         </div>
 
+        {/* Stats Empty State Helper */}
+        <div className="stats-helper">
+          <p>Start your first scan to build your dashboard and see your analysis activity</p>
+        </div>
+
         {/* Tools Section */}
         <div className="mb-16">
           <div className="mb-10">
@@ -238,12 +248,12 @@ export default function Home() {
               Built for security professionals and everyday users who take cybersecurity seriously.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {features.map((feature, idx) => (
               <div key={idx} className="group">
                 <div className="flex items-start gap-4">
-                  <div className="text-4xl mt-1">{feature.icon}</div>
-                  <div>
+                  <div className="text-4xl mt-1.5 flex-shrink-0">{feature.icon}</div>
+                  <div className="pt-0.5">
                     <h3 className="text-lg font-bold text-white mb-2 group-hover:text-blue-300 transition-colors">
                       {feature.title}
                     </h3>
