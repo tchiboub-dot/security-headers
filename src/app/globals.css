@@ -876,3 +876,87 @@ html[data-theme="light"] ::selection {
   background-color: rgba(37, 99, 235, 0.8);
   color: white;
 }
+
+/* ============================================
+   PREMIUM CUSTOM LOGO STYLING
+   ============================================ */
+
+/* Logo container with circular frame and glow */
+.logo-container {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Outer glow ring - subtle neon blue */
+.logo-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.3) 0%, rgba(59, 130, 246, 0.1) 100%);
+  box-shadow: 
+    0 0 0 1px rgba(59, 130, 246, 0.5),
+    0 0 12px rgba(59, 130, 246, 0.25),
+    inset 0 0 12px rgba(59, 130, 246, 0.1);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Glass effect layer */
+.logo-container::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(59, 130, 246, 0.05) 100%);
+  border-radius: 50%;
+  backdrop-filter: blur(8px);
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Logo image - circular and centered */
+.logo-image {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 3;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Hover animation for logo - subtle pulse and glow enhancement */
+.logo-container:hover .logo-image {
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.35);
+}
+
+.logo-container:hover::before {
+  box-shadow: 
+    0 0 0 1px rgba(59, 130, 246, 0.7),
+    0 0 16px rgba(59, 130, 246, 0.4),
+    inset 0 0 16px rgba(59, 130, 246, 0.15);
+}
+
+/* Responsive scaling for smaller screens */
+@media (max-width: 640px) {
+  .logo-container {
+    width: 36px;
+    height: 36px;
+  }
+
+  .logo-image {
+    width: 30px;
+    height: 30px;
+  }
+
+  .logo-container::after {
+    inset: 1.5px;
+  }
+}

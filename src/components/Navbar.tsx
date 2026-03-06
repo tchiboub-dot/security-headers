@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 import { usePathname } from 'next/navigation'
 
@@ -31,10 +32,15 @@ export function Navbar() {
             href="/" 
             className="flex items-center gap-3 font-bold text-lg transition-all duration-300 group"
           >
-            <div className="relative w-9 h-9 bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg flex items-center justify-center shadow-lg group-hover:shadow-blue-500/30 group-hover:shadow-xl transition-all">
-              <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M10 2C5.58 2 2 5.58 2 10s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zm1-11h-2v4H7v2h4V5z" />
-              </svg>
+            <div className="logo-container">
+              <Image 
+                src="/assets/logo.png" 
+                alt="PhishLab Logo" 
+                width={36}
+                height={36}
+                className="logo-image"
+                priority
+              />
             </div>
             <span className="text-white font-bold text-lg hidden sm:block bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent">
               PhishLab
