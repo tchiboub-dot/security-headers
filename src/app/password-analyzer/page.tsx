@@ -88,13 +88,14 @@ export default function PasswordAnalyzer() {
   }
 
   return (
-    <main className="min-h-screen pt-20 pb-12 px-4 sm:px-6 lg:px-8">
+    <main className="min-h-screen pt-24 pb-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
-        <div className="glass rounded-2xl p-8 mb-8 border border-blue-400 border-opacity-30">
-          <h1 className="text-4xl font-bold text-white mb-2">🔐 Password Strength Analyzer</h1>
-          <p className="text-gray-300">
-            Test your password strength with real-time analysis. Get actionable feedback and suggestions.
+        <div className="mb-12 fade-in">
+          <h1 className="text-5xl font-bold text-white mb-3">Password Strength Analyzer</h1>
+          <p className="text-xl text-slate-300 font-medium mb-2">Real-time analysis with detailed insights</p>
+          <p className="text-slate-400 text-lg max-w-2xl">
+            Get instant strength scoring, discover vulnerabilities, and receive actionable recommendations to improve your password security.
           </p>
         </div>
 

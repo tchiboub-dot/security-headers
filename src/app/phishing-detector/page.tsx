@@ -89,13 +89,14 @@ export default function PhishingDetector() {
   }
 
   return (
-    <main className="min-h-screen pt-20 pb-12 px-4 sm:px-6 lg:px-8">
+    <main className="min-h-screen pt-24 pb-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
-        <div className="glass rounded-2xl p-8 mb-8 border border-orange-400 border-opacity-30">
-          <h1 className="text-4xl font-bold text-white mb-2">⚠️ Phishing Detector</h1>
-          <p className="text-gray-300">
-            Analyze URLs and emails to detect phishing patterns, suspicious links, and phishing indicators.
+        <div className="mb-12 fade-in">
+          <h1 className="text-5xl font-bold text-white mb-3">Phishing Detector</h1>
+          <p className="text-xl text-slate-300 font-medium mb-2">Detect suspicious links and phishing threats</p>
+          <p className="text-slate-400 text-lg max-w-2xl">
+            Analyze URLs and emails to identify phishing patterns, malicious links, and security threats with detailed risk assessment.
           </p>
         </div>
 

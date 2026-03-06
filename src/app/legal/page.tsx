@@ -4,13 +4,14 @@
 
 export default function Legal() {
   return (
-    <main className="min-h-screen pt-20 pb-12 px-4 sm:px-6 lg:px-8">
+    <main className="min-h-screen pt-24 pb-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
-        <div className="glass rounded-2xl p-8 mb-8 border border-blue-400 border-opacity-30">
-          <h1 className="text-4xl font-bold text-white mb-2">📋 Terms & Disclaimer</h1>
-          <p className="text-gray-300">
-            Important information about using Password & Phishing Lab
+        <div className="mb-12 fade-in">
+          <h1 className="text-5xl font-bold text-white mb-3">Terms & Disclaimer</h1>
+          <p className="text-xl text-slate-300 font-medium mb-2">Please read carefully</p>
+          <p className="text-slate-400 text-lg max-w-2xl">
+            Important legal information about using PhishLab, including our privacy commitment, terms of use, and educational disclaimer.
           </p>
         </div>
 
