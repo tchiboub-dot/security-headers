@@ -960,3 +960,110 @@ html[data-theme="light"] ::selection {
     inset: 1.5px;
   }
 }
+
+/* ============================================
+   PREMIUM FOOTER STYLING
+   ============================================ */
+
+.footer-container {
+  width: 100%;
+  border-top: 1px solid var(--border-light);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02) 0%,
+    rgba(59, 130, 246, 0.03) 100%
+  );
+  padding: 3rem 0;
+  margin-top: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle top glow accent */
+.footer-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(59, 130, 246, 0.3),
+    transparent
+  );
+  filter: blur(1px);
+}
+
+.footer-content {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.footer-text {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--text-tertiary);
+  letter-spacing: 0.3px;
+  font-weight: 400;
+}
+
+.footer-text a {
+  color: var(--accent-primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.footer-text a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--accent-primary);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.footer-text a:hover {
+  color: #60a5fa;
+}
+
+.footer-text a:hover::after {
+  opacity: 1;
+}
+
+html[data-theme="light"] .footer-container {
+  background: linear-gradient(
+    180deg,
+    rgba(37, 99, 235, 0.02) 0%,
+    rgba(37, 99, 235, 0.01) 100%
+  );
+  border-top-color: var(--border-light);
+}
+
+html[data-theme="light"] .footer-text a {
+  color: #2563eb;
+}
+
+html[data-theme="light"] .footer-text a:hover {
+  color: #1d4ed8;
+}
+
+/* Responsive footer */
+@media (max-width: 640px) {
+  .footer-container {
+    padding: 2rem 0;
+    margin-top: 2.5rem;
+  }
+
+  .footer-text {
+    font-size: 0.8125rem;
+  }
+}

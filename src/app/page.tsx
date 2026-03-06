@@ -257,6 +257,19 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* Premium Footer */}
+      <footer className="footer-container">
+        <div className="footer-content">
+          <p className="footer-text">
+            © 2026 PhishLab. All rights reserved. Created by{' '}
+            <a href="/" title="PhishLab Creator">
+              Taha Adnane Chiboub
+            </a>
+            .
+          </p>
+        </div>
+      </footer>
     </main>
   )
 }
