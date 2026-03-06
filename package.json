@@ -1,0 +1,39 @@
+{
+  "name": "phishing-lab",
+  "version": "1.0.0",
+  "description": "Password & Phishing Lab - Test password strength, detect phishing patterns, and learn security best practices",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:push": "prisma db push",
+    "db:seed": "node prisma/seed.js"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "next": "^14.0.4",
+    "@prisma/client": "^5.7.1",
+    "zod": "^3.22.4",
+    "jspdf": "^2.5.1",
+    "html2canvas": "^1.4.1",
+    "axios": "^1.6.2",
+    "copy-to-clipboard": "^3.3.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "@types/node": "^20.10.5",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.4.1",
+    "prisma": "^5.7.1",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "^14.0.4"
+  }
+}

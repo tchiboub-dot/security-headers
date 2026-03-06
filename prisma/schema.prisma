@@ -1,0 +1,72 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String     @id @default(cuid())
+  email     String     @unique
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  scans     Scan[]
+  settings  Settings?
+
+  @@index([createdAt])
+  @@index([email])
+}
+
+model Settings {
+  id                String   @id @default(cuid())
+  userId            String   @unique
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  saveHistory       Boolean  @default(true)
+  theme             String   @default("dark")
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@index([userId])
+}
+
+model Scan {
+  id                String   @id @default(cuid())
+  userId            String?
+  user              User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  type              String   // PASSWORD, URL, EMAIL (stored as string for SQLite compatibility)
+  riskScore         Int      // 0-100
+  
+  // Password fields
+  passwordHash      String?  // sha256 hash for duplicate detection (do NOT store password)
+  passwordLength    Int?
+  passwordMeta      String?  // JSON string: { hasUpper, hasLower, hasNumbers, hasSymbols, etc }
+  
+  // URL fields
+  urlNormalized     String?  // normalized URL without query params
+  urlDomain         String?
+  urlRiskFlags      String?  // CSV string or JSON string
+  
+  // Email fields
+  emailRedacted     String?  // PII redacted
+  emailRiskFlags    String?  // CSV string or JSON string
+  
+  // Common fields (stored as JSON strings)
+  flags             String?  // JSON string array
+  recommendations   String?  // JSON string array
+  rawAnalysis       String?  // JSON string with detailed analysis results
+  
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  
+  @@index([userId])
+  @@index([type])
+  @@index([createdAt])
+  @@index([riskScore])
+}
+
